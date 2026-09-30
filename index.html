@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
   <meta name="theme-color" content="#0bb7df">
-  <meta name="description" content="EkuCityHub — PR, advertising, news, events, reels and creative media.">
+  <meta name="description" content="E-CityHub — PR, advertising, news, events, reels and creative media.">
 
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" type="image/png" href="./25495.png">>
-  <link rel="apple-touch-icon" href="./logo.png">
+  <link rel="icon" type="image/png" href="./logo.png">
 
-  <title>EkuCityHub</title>
+  <title>E-CityHub</title>
 </head>
 
 <body>
@@ -22,8 +21,8 @@
     <button class="icon-btn" id="menuBtn" aria-label="Open menu">☰</button>
 
     <a class="brand" href="#home" data-route>
-      <img src="./logo.png" alt="EkuCityHub logo">
-      <span>EkuCityHub</span>
+      <img src="./logo.png" alt="E-CityHub logo">
+      <span>E-CityHub</span>
     </a>
 
     <button class="icon-btn" id="installBtn" hidden aria-label="Install app">＋</button>
@@ -31,7 +30,7 @@
 
   <aside class="drawer" id="drawer" aria-hidden="true">
     <div class="drawer-head">
-      <strong>EkuCityHub</strong>
+      <strong>E-CityHub</strong>
       <button class="icon-btn" id="closeMenu">×</button>
     </div>
 
@@ -83,15 +82,14 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="./supabase-config.js"></script>
-<script src="./app.js"></script>
+<script src="supabase-config.js"></script>
+<script src="app.js"></script>
 
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("./sw.js")
-      .then(() => console.log("EkuCityHub service worker registered"))
-      .catch(err => console.error("Service worker error:", err));
+      .catch(() => {});
   });
 }
 </script>
