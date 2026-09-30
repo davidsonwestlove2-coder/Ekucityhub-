@@ -1,4 +1,20 @@
 const main=document.querySelector("#main");
+// EkuCityHub logo
+const logoImg = document.createElement("img");
+logoImg.src = "assets/logo.png";
+logoImg.alt = "EkuCityHub";
+logoImg.style.width = "52px";
+logoImg.style.height = "52px";
+logoImg.style.objectFit = "contain";
+logoImg.style.display = "block";
+
+const siteHeader = document.querySelector("header");
+if (siteHeader) {
+  const existingLogo = siteHeader.querySelector("img");
+  if (!existingLogo) {
+    siteHeader.insertBefore(logoImg, siteHeader.firstChild);
+  }
+}
 const drawer=document.querySelector("#drawer"),scrim=document.querySelector("#scrim");
 let cloud={ads:[],news:[],events:[],reels:[],services:[],requests:[]};
 let session=null;
