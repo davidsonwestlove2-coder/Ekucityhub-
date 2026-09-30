@@ -76,6 +76,13 @@ async function bindPage(key){
 }
 function updateActive(){const key=(location.hash||"#home").slice(1);document.querySelectorAll(".bottom-nav a").forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+key))}
 window.addEventListener("hashchange",render);
+function render(){
+  const key=location.hash.replace("#","")||"home";
+  const fn=routes[key]||home;
+  main.innerHTML=fn();
+  bindPage();
+  updateActive();
+}
 supabase.auth.getSession().then(async ({data})=>{session=data.session;await loadCloud();if(!location.hash)location.hash="#home";else render()});
 supabase.auth.onAuthStateChange((_event,s)=>{session=s});
 let deferredInstall;window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredInstall=e;const b=document.querySelector("#installBtn");b.hidden=false;b.onclick=async()=>{if(deferredInstall){deferredInstall.prompt();deferredInstall=null;b.hidden=true}}});
