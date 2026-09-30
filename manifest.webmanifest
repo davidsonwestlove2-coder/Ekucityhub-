@@ -1,8 +1,17 @@
-"icons": [
-  {
-    "src": "./25495.png",
-    "type": "image/png",
-    "sizes": "any",
-    "purpose": "any"
-  }
-]
+{
+  "name": "E-CityHub",
+  "short_name": "E-CityHub",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0bb7df",
+  "description": "E-CityHub PR, advertising, news, events and media platform.",
+  "icons": [
+    {
+      "src": "./logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
