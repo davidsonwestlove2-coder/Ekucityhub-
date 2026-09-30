@@ -7,11 +7,16 @@
   "theme_color": "#0bb7df",
   "description": "E-CityHub PR, advertising, news, events and media platform.",
   "icons": [
-    {
-      "src": "./logo.png",
-      "sizes": "any",
-      "type": "image/png",
-      "purpose": "any"
-    }
-  ]
-}
+  {
+    "src": "./logo.png",
+    "sizes": "192x192",
+    "type": "image/png",
+    "purpose": "any"
+  },
+  {
+    "src": "./logo.png",
+    "sizes": "512x512",
+    "type": "image/png",
+    "purpose": "any"
+  }
+]
