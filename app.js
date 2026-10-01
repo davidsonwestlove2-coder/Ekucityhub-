@@ -18,7 +18,6 @@ if (siteHeader) {
 const drawer=document.querySelector("#drawer"),scrim=document.querySelector("#scrim");
 let cloud={ads:[],news:[],events:[],reels:[],services:[],requests:[]};
 let session=null;
-
 document.querySelector("#menuBtn").onclick=()=>{drawer.classList.add("open");scrim.classList.add("show");drawer.setAttribute("aria-hidden","false")};
 document.querySelector("#closeMenu").onclick=closeDrawer;scrim.onclick=closeDrawer;
 function closeDrawer(){drawer.classList.remove("open");scrim.classList.remove("show");drawer.setAttribute("aria-hidden","true")}
