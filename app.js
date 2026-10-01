@@ -88,17 +88,15 @@ function serviceCards() {
   ]
     .map(
       x => `
-        <a class="card service" href="#advertise">
-          <div class="icon">${x[0]}</div>
-          <h3>${x[1]}</h3>
-          <p>${x[2]}</p>
-        </a>
-      `
-    )
-    .join("");
+       document.querySelector("#logoutBtn")?.addEventListener("click",async()=>{
+    await supabase.auth.signOut();
+    session=null;
+    cloud.requests=[];
+    location.hash="#home";
+    await render();
+  });
+  }
 }
-
-function adCard(x) {
   return `
     <article class="card ad-card">
       <span class="pill">${esc(x.category || "Featured Business")}</span>
