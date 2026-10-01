@@ -95,8 +95,6 @@ async function bindPage(key){
   cloud.requests=[];
   location.hash='#home';
 });
-  bindPage();
-  updateActive();
 }
 supabase.auth.getSession().then(async ({data})=>{session=data.session;await loadCloud();if(!location.hash)location.hash="#home";else render()});
 supabase.auth.onAuthStateChange((_event,s)=>{session=s});
