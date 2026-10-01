@@ -92,8 +92,8 @@ async function bindPage(key){
   await supabase.auth.signOut();
   session=null;
   cloud.requests=[];
-  location.hash='#home';
-  render();
+location.hash='#home';
+render();
 });
 }
 supabase.auth.getSession().then(async ({data})=>{session=data.session;await loadCloud();if(!location.hash)location.hash="#home";else render()});
