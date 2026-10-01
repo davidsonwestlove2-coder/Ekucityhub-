@@ -95,8 +95,13 @@ async function bindPage(key){
  });
  if(key==="admin"){
   document.querySelector("#loginForm")?.addEventListener("submit",async e=>{e.preventDefault();const m=document.querySelector('#loginMsg');const {data,error}=await supabase.auth.signInWithPassword({email:document.querySelector('#adminEmail').value.trim(),password:document.querySelector('#adminPassword').value});if(error){m.innerHTML=`<div class="notice" style="margin-top:10px">${esc(error.message)}</div>`;return}session=data.session;await loadCloud();render();});
-  document.querySelector("#logoutBtn")?.addEventListener("click",async()=>{await supabase.auth.signOut();session=null;cloud.requests=[];location.hash='#admin';render()});
- }
+  document.querySelector("#logoutBtn")?.addEventListener("click",async()=>{
+  await supabase.auth.signOut();
+  session=null;
+  cloud.requests=[];
+  location.hash='#home';
+  render();
+});
 }
 function updateActive(){const key=(location.hash||"#home").slice(1);document.querySelectorAll(".bottom-nav a").forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+key))}
 window.addEventListener("hashchange",render);
