@@ -88,7 +88,7 @@ function serviceCards() {
   ]
     .map(
       x => `
-       document.querySelector("#logoutBtn")?.addEventListener("click",async()=>{
+         document.querySelector("#logoutBtn")?.addEventListener("click",async()=>{
     await supabase.auth.signOut();
     session=null;
     cloud.requests=[];
@@ -97,9 +97,6 @@ function serviceCards() {
   });
   }
 }
-  return `
-    <article class="card ad-card">
-      <span class="pill">${esc(x.category || "Featured Business")}</span>
       <div>
         <h3>${esc(x.title || x.business_name)}</h3>
         <p>${esc(x.text || x.description)}</p>
