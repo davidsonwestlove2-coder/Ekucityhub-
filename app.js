@@ -102,13 +102,7 @@ async function bindPage(key){
   location.hash='#home';
   render();
 });
-}
-function updateActive(){const key=(location.hash||"#home").slice(1);document.querySelectorAll(".bottom-nav a").forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+key))}
-window.addEventListener("hashchange",render);
-function render(){
-  const key=location.hash.replace("#","")||"home";
-  const fn=routes[key]||home;
-  main.innerHTML=fn();
+
   bindPage();
   updateActive();
 }
