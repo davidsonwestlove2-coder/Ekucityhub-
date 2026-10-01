@@ -62,27 +62,21 @@ async function render(){
 async function bindPage(key){
   if(key==="admin")document.querySelector("#newsForm")?.addEventListener("submit",async e=>{
   e.preventDefault();
-
   const title=document.querySelector("#newsTitle").value.trim();
   const text=document.querySelector("#newsText").value.trim();
   const msg=document.querySelector("#newsMsg");
-
   msg.textContent="Publishing...";
-
   const {error}=await supabase.from("news").insert({
     title:title,
     text:text,
     published:true
   });
-
   if(error){
     msg.textContent="Error: "+error.message;
     return;
   }
-
   msg.textContent="✅ News published successfully!";
   e.target.reset();
-
   await loadCloud();
   render();
 });
@@ -100,9 +94,7 @@ async function bindPage(key){
   session=null;
   cloud.requests=[];
   location.hash='#home';
-  render();
 });
-
   bindPage();
   updateActive();
 }
